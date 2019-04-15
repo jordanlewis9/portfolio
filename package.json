@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch assets/main.scss -o assets"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Jordan Lewis",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
