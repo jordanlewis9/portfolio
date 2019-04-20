@@ -4,10 +4,12 @@
   box-sizing: border-box; }
 
 body {
-  background-color: yellow; }
+  background: url("https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center fixed;
+  background-size: cover;
+  overflow-y: scroll; }
 
 .container {
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.1);
   width: 95vw;
   margin: 0 auto; }
 
@@ -22,19 +24,17 @@ body {
 .nav-list {
   list-style: none;
   display: block; }
-
-li {
-  display: inline-block;
-  padding: 10px; }
-
-li a {
-  text-decoration: none; }
+  .nav-list li {
+    display: inline-block;
+    padding: 10px; }
+    .nav-list li a {
+      text-decoration: none; }
 
 #home {
   text-align: center;
   margin-top: 5vh;
   height: 100vh;
-  background-color: pink; }
+  background-color: rgba(255, 200, 200, 0.3); }
 
 .header {
   transform: translateY(40vh); }
@@ -71,32 +71,76 @@ h1 {
     transform: translateX(0); } }
 
 #about {
-  height: 100vh;
-  background-color: red;
-  padding: 0 5%;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 5%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr; }
-  #about img {
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  color: rgba(190, 190, 190, 0.9);
+  width: 100%; }
+  #about .about__img img {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    padding: 0 20% 20% 15%; }
+  #about .exp__img img {
+    width: 100%;
+    height: 100%;
+    padding: 5% 15% 20% 20%; }
+  #about .exp__text {
+    padding: 5% 0; }
+
+@media (max-width: 750px) {
+  #about {
+    height: auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr; }
+    #about .about__img img {
+      padding: 5%; }
+    #about .about__text {
+      padding: 5%;
+      height: auto; }
+    #about .exp__text {
+      order: 4;
+      padding: 5%;
+      height: auto; }
+    #about .exp__img img {
+      order: 3;
+      padding: 5%;
+      height: 70%; } }
 
 #projects {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  background-color: purple; }
+  background-color: rgba(255, 0, 255, 0.3); }
   #projects .thumbnail {
     height: 40%;
     width: 25%;
-    border: 1px solid gray; }
+    border: 1px solid silver; }
     #projects .thumbnail img {
       width: 100%;
       height: 100%; }
     #projects .thumbnail .caption {
-      border: 1px solid red; }
+      border: 1px solid rgba(255, 255, 255, 0.8); }
 
 #contact {
   height: 100vh;
-  background-color: silver; }
+  background-color: rgba(192, 192, 192, 0.3); }
+  #contact .links {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    #contact .links .contact {
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      border-radius: 50%;
+      text-align: center; }
+      #contact .links .contact .icon {
+        font-size: 7rem;
+        margin-top: 19px;
+        color: white; }

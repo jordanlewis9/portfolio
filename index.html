@@ -4,6 +4,12 @@
     <meta charset="UTG-8" />
     <meta name="description" content="Jordan Lewis portfolio site" />
     <meta name="author" content="Jordan Lewis" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="assets/main.css" />
     <title>Jordan Lewis - Front End Web Developer</title>
   </head>
@@ -11,10 +17,10 @@
     <div class="container">
       <nav class="top-nav">
         <ul class="nav-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact Me</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
         </ul>
       </nav>
       <div id="home">
@@ -28,11 +34,14 @@
       </div>
       <div id="about">
         <!-- <div class="description"> -->
-        <img
-          src="https://i.imgur.com/8jfs82w.jpg"
-          alt="Wife and I on Clingman's Dome"
-        />
-        <div class="about-text">
+        <div class="about__img">
+          <img
+            src="https://i.imgur.com/8jfs82w.jpg"
+            alt="Wife and I on Clingman's Dome"
+          />
+        </div>
+
+        <div class="about__text">
           <p>
             Thanks for visiting my page! I'm Jordan, a Front-End Web Developer
             based in Columbus, Ohio. That's me pictured with my wife on top of
@@ -43,26 +52,58 @@
           <p>
             As a Front-End Developer, I specialize in HTML, CSS, Javascript, and
             React. I pride myself on building user-friendly applications with
-            beautiful user interfaces. I aspire to build my skillset everyday to
-            obtain my ultimate goal of becoming a Full-Stack Developer. Feel
-            free to check out some of my projects below!
+            beautiful user interfaces. I love building websites because of the
+            thrill one gets when you slowly see your vision come together in a
+            place accessible to everyone in the world. I like the logic of React
+            and JavaScript in piecing together different functions and methods
+            to get the site to work how you want it to work. I aspire to build
+            my skillset everyday to obtain my ultimate goal of becoming a
+            Full-Stack Developer. Feel free to check out some of my projects
+            below!
           </p>
         </div>
         <!-- </div> -->
-        <!-- <div class="experience"> -->
-        <p>
-          Professionally, I spent two and a half years as a Human Resources
-          Coordinator at a local grocery chain. But that's not what intrigued
-          you about this section. In between my time as a Human Resources
-          Coordinator and a Front-End Developer, I made my living building
-          stacks of chips like the one depicted by playing poker.
-        </p>
-        <img src="https://i.imgur.com/15GRPjh.jpg" alt="Chip stack" />
-        <!-- </div> -->
+        <div class="exp__text">
+          <p>
+            Professionally, I spent two and a half years as a Human Resources
+            Coordinator at a local grocery chain, Giant Eagle. It is there where
+            I learned soft skills such as communication, time management,
+            professionalism in the workplace, and cooperation amongst co-workers
+            in different sectors. But that's not what intrigued you about this
+            section.
+          </p>
+          <br />
+          <p>
+            In between my time as a Human Resources Coordinator and a Front-End
+            Developer, I made my living building stacks of chips like the one
+            depicted by playing poker. Playing poker professionally taught me
+            quite a few lessons that are critical to web development. These
+            include:
+          </p>
+          <br />
+          <ul>
+            <li>There are many different ways to get the same result.</li>
+            <li>
+              How to piece together an accurate picture based on incomplete
+              information.
+            </li>
+            <li>What looks like a "minor" improvement adds up over time.</li>
+            <li>
+              You almost never make the big mistake. Instead, it's the small one
+              you should look for.
+            </li>
+          </ul>
+        </div>
+        <div class="exp__img">
+          <img src="https://i.imgur.com/15GRPjh.jpg" alt="Chip stack" />
+        </div>
       </div>
       <div id="projects">
         <figure class="thumbnail thumbnail__weather">
-          <a href="https://jordanlewis9.github.io/current_weather/">
+          <a
+            href="https://jordanlewis9.github.io/current_weather/"
+            target="_blank"
+          >
             <img src="https://i.imgur.com/CtAAvEB.jpg" alt="Weather Project" />
           </a>
           <figcaption class="caption">
@@ -70,16 +111,43 @@
           </figcaption>
         </figure>
         <figure class="thumbnail thumbnail__war">
-          <a href="https://jordanlewis9.github.io/war/">
+          <a href="https://jordanlewis9.github.io/war/" target="_blank">
             <img src="https://i.imgur.com/zduPSuU.jpg" alt="War Project" />
           </a>
           <figcaption class="caption">
             Casino-style war game, created with HTML, CSS, and JS
           </figcaption>
         </figure>
+        <figure class="thumbnail thumbnail__quote">
+          <a href="https://codepen.io/jlewis90/full/ywZMeL" target="_blank">
+            <img
+              src="https://i.imgur.com/hl4bk7s.jpg"
+              alt="Random Quote Machine"
+            />
+          </a>
+          <figcaption class="caption">
+            Random quote generator using React, HTML, and CSS
+          </figcaption>
+        </figure>
       </div>
       <div id="contact">
-        <p>This is the Contact Me section</p>
+        <div class="links">
+          <div class="contact">
+            <a href="https://github.com/jordanlewis9" target="_blank"
+              ><i class="fab fa-github icon"></i
+            ></a>
+          </div>
+          <div class="contact">
+            <a href="mailto:mail@jordannlewis.com"
+              ><i class="fas fa-envelope icon"></i
+            ></a>
+          </div>
+          <div class="contact">
+            <a href="https://www.linkedin.com/in/jordannlewis1/" target="_blank"
+              ><i class="fab fa-linkedin icon"></i
+            ></a>
+          </div>
+        </div>
       </div>
     </div>
   </body>
