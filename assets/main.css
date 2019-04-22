@@ -6,7 +6,8 @@
 body {
   background: url("https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center fixed;
   background-size: cover;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 .container {
   background-color: rgba(0, 0, 255, 0.1);
@@ -82,11 +83,11 @@ h1 {
   #about .about__img img {
     width: 100%;
     height: 100%;
-    padding: 0 20% 20% 15%; }
+    padding: 0 20% 5% 15%; }
   #about .exp__img img {
     width: 100%;
     height: 100%;
-    padding: 5% 15% 20% 20%; }
+    padding: 5% 15% 5% 20%; }
   #about .exp__text {
     padding: 5% 0; }
 
@@ -110,21 +111,76 @@ h1 {
       padding: 5%;
       height: 70%; } }
 
-#projects {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(255, 0, 255, 0.3); }
-  #projects .thumbnail {
-    height: 40%;
-    width: 25%;
-    border: 1px solid silver; }
-    #projects .thumbnail img {
-      width: 100%;
-      height: 100%; }
-    #projects .thumbnail .caption {
-      border: 1px solid rgba(255, 255, 255, 0.8); }
+.project__header {
+  text-align: center;
+  color: white; }
+
+@media (min-width: 751px) {
+  .projects {
+    display: flex;
+    justify-content: space-around; }
+  .thumbnail {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; }
+  .flip__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; }
+  .pic__link,
+  .mobile__link {
+    display: none; }
+  .thumbnail:hover .flip__container {
+    transform: rotateY(180deg); }
+  .flip__front,
+  .flip__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; }
+  .flip__front {
+    background-color: #bbb;
+    color: black; }
+    .flip__front .flip__pic {
+      height: 100%;
+      width: 100%; }
+  .flip__back {
+    background-color: rgba(22, 0, 255, 0.2);
+    color: white;
+    transform: rotateY(180deg); }
+    .flip__back a .button {
+      width: 40%;
+      height: 15%;
+      border-radius: 10px;
+      margin-top: 40px;
+      outline: none;
+      border: none;
+      cursor: pointer; }
+      .flip__back a .button:hover {
+        background-color: #cacaca; }
+      .flip__back a .button:active {
+        background-color: #a4a4a4; } }
+
+@media (max-width: 750px) {
+  .projects {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 0, 255, 0.3); }
+    .projects .thumbnail {
+      height: 30%;
+      width: 60%; }
+  .flip__pic,
+  .button {
+    display: none; }
+  .mobile__pic {
+    width: 100%;
+    height: 100%; } }
 
 #contact {
   height: 100vh;
