@@ -2,11 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "portfolio",
-  "main": "index.php",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch assets/main.scss -o assets",
-    "start": "start ./index.php"
+    "start": "harp server --port $PORT"
   },
   "keywords": [
     "portfolio"
@@ -14,7 +14,8 @@
   "author": "Jordan Lewis",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "harp": "*"
   },
   "devDependencies": {}
 }
