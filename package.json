@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch assets/main.scss -o assets",
-    "start": "npm start ./index.html"
+    "start": "npm start"
   },
   "keywords": [
     "portfolio"
