@@ -4,8 +4,9 @@
   "description": "portfolio",
   "main": "index.html",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch assets/main.scss -o assets",
-    "start": "npm run index.html"
+    "start": "npm run ./index.html"
   },
   "keywords": [
     "portfolio"
