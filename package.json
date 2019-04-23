@@ -2,11 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "portfolio",
-  "main": "index.html",
+  "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch assets/main.scss -o assets",
-    "start": "npm start ./index.php"
+    "start": "start ./index.php"
   },
   "keywords": [
     "portfolio"
