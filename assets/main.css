@@ -300,11 +300,15 @@ body {
       #contact .links .contact {
         width: 150px;
         height: 150px;
-        background-color: darkgreen;
+        background-color: #ddd;
         border-radius: 50%;
         text-align: center;
         justify-self: center;
         -ms-grid-column-align: center; }
+        #contact .links .contact:hover {
+          background-color: #222; }
+        #contact .links .contact:hover .icon {
+          color: #ddd; }
         #contact .links .contact__github {
           -ms-grid-row: 1;
           -ms-grid-column: 1; }
@@ -317,7 +321,7 @@ body {
         #contact .links .contact .icon {
           font-size: 7rem;
           margin-top: 19px;
-          color: white; }
+          color: #222; }
         #contact .links .contact:hover + .site {
           background-color: #ddd; }
           #contact .links .contact:hover + .site .link__p {
