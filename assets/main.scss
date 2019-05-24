@@ -19,8 +19,8 @@
 }
 
 body {
-  background: url("https://images.pexels.com/photos/1257860/pexels-photo-1257860.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-    no-repeat center center fixed;
+  background: white;
+  color: #111;
   background-size: cover;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -63,7 +63,6 @@ body {
   text-align: center;
   margin-top: 5vh;
   @include section-height;
-  color: white;
 
   .header {
     transform: translateY(40vh);
@@ -126,18 +125,18 @@ body {
   -ms-grid-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
-  color: white;
   font-weight: 600;
   width: 100%;
 
   .about__img {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
+    padding-right: 10px;
 
     img {
       height: 80%;
       width: 100%;
-      padding: 0 20% 5% 15%;
+      // padding: 0 20% 5% 15%;
     }
   }
 
@@ -212,7 +211,6 @@ body {
 
 .project__header {
   text-align: center;
-  color: white;
   padding-bottom: 5vh;
   font-weight: 700;
   font-size: 2rem;
@@ -236,7 +234,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s;
+    transition: transform 0.9s;
     transform-style: preserve-3d;
   }
 
@@ -266,7 +264,6 @@ body {
 
   .flip__back {
     background-color: rgba(22, 0, 256, 0.2);
-    color: white;
     transform: rotateY(180deg);
 
     .caption {
@@ -350,7 +347,6 @@ body {
 
     .flip__back {
       background-color: rgba(22, 0, 256, 0.2);
-      color: white;
       transform: rotateY(180deg);
 
       .caption {
@@ -414,13 +410,20 @@ body {
 
   .caption {
     background-color: rgba(#222, 0.8);
-    color: white;
     padding-top: 5px;
   }
 }
 @media (min-width: 751px) {
   #contact {
     height: auto;
+    padding-bottom: 5vh;
+
+    .contact__header {
+      padding-top: 5vh;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2rem;
+    }
 
     .links {
       height: auto;
@@ -437,18 +440,18 @@ body {
       .contact {
         width: 150px;
         height: 150px;
-        background-color: #ddd;
+        background-color: white;
         border-radius: 50%;
         text-align: center;
         justify-self: center;
         -ms-grid-column-align: center;
 
         &:hover {
-          background-color: #222;
+          background-color: #111;
         }
 
         &:hover .icon {
-          color: #ddd;
+          color: white;
         }
 
         &__github {
@@ -469,20 +472,20 @@ body {
         .icon {
           font-size: 7rem;
           margin-top: 19px;
-          color: #222;
+          color: #111;
         }
 
         &:hover + .site {
-          background-color: #ddd;
+          background-color: #111;
 
           .link__p {
-            color: #222;
+            color: white;
           }
         }
       }
 
       .site {
-        background-color: #222;
+        background-color: white;
         font-size: 50px;
 
         &__github {
@@ -506,9 +509,9 @@ body {
 
       .link__p {
         display: inline;
+        color: #111;
         pointer-events: none;
         text-decoration: none;
-        color: #ddd;
       }
     }
   }
@@ -531,12 +534,12 @@ body {
       }
 
       .site {
-        background-color: #222;
+        background-color: #111;
         width: 100%;
         text-align: center;
 
         .link__p {
-          color: #ddd;
+          color: white;
           text-decoration: none;
           font-size: 50px;
         }
