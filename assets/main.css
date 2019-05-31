@@ -16,7 +16,7 @@ body {
   margin: 0 auto; }
 
 .top-nav {
-  background: linear-gradient(to right, #666, #111);
+  background: #111;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -31,9 +31,11 @@ body {
     padding: 10px; }
     .nav-list li a {
       text-decoration: none;
-      color: #eee; }
+      color: white;
+      font-weight: 700;
+      letter-spacing: 2px; }
       .nav-list li a:hover {
-        color: #64ff64; }
+        color: #828282; }
 
 #home {
   text-align: center;
@@ -180,7 +182,8 @@ body {
     height: 100%;
     width: 100%; }
   .flip__back {
-    background-color: rgba(22, 0, 255, 0.2);
+    background: #111;
+    color: white;
     transform: rotateY(180deg); }
     .flip__back .caption {
       padding-top: 30px; }
@@ -235,7 +238,8 @@ body {
     height: 100%;
     width: 100%; }
   .flip__back {
-    background-color: rgba(22, 0, 255, 0.2);
+    background: #111;
+    color: white;
     transform: rotateY(180deg); }
     .flip__back .caption {
       padding-top: 30px; }
@@ -275,18 +279,20 @@ body {
     width: 100%;
     height: 100%; }
   .caption {
-    background-color: rgba(34, 34, 34, 0.8);
+    background: #111;
+    color: white;
     padding-top: 5px; } }
+
+.contact__header {
+  padding-top: 5vh;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem; }
 
 @media (min-width: 751px) {
   #contact {
     height: auto;
     padding-bottom: 5vh; }
-    #contact .contact__header {
-      padding-top: 5vh;
-      text-align: center;
-      font-weight: 700;
-      font-size: 2rem; }
     #contact .links {
       height: auto;
       display: grid;

@@ -32,7 +32,7 @@ body {
 }
 
 .top-nav {
-  background: linear-gradient(to right, #666, #111);
+  background: #111;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -50,10 +50,12 @@ body {
 
     a {
       text-decoration: none;
-      color: #eee;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 2px;
 
       &:hover {
-        color: rgb(100, 256, 100);
+        color: rgb(130, 130, 130);
       }
     }
   }
@@ -263,7 +265,8 @@ body {
   }
 
   .flip__back {
-    background-color: rgba(22, 0, 256, 0.2);
+    background: #111;
+    color: white;
     transform: rotateY(180deg);
 
     .caption {
@@ -346,7 +349,8 @@ body {
     }
 
     .flip__back {
-      background-color: rgba(22, 0, 256, 0.2);
+      background: #111;
+      color: white;
       transform: rotateY(180deg);
 
       .caption {
@@ -409,21 +413,23 @@ body {
   }
 
   .caption {
-    background-color: rgba(#222, 0.8);
+    background: #111;
+    color: white;
     padding-top: 5px;
   }
 }
+
+.contact__header {
+  padding-top: 5vh;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
 @media (min-width: 751px) {
   #contact {
     height: auto;
     padding-bottom: 5vh;
-
-    .contact__header {
-      padding-top: 5vh;
-      text-align: center;
-      font-weight: 700;
-      font-size: 2rem;
-    }
 
     .links {
       height: auto;
