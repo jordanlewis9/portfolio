@@ -20,8 +20,9 @@ body {
   z-index: 999;
   position: fixed;
   top: 0;
-  width: 95vw;
-  margin: 0 auto; }
+  left: 0;
+  width: 100vw;
+  margin-left: -5vw; }
 
 .nav-list {
   list-style: none;
@@ -109,7 +110,7 @@ body {
       height: 100%;
       padding: 5% 15% 5% 20%; }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   #about {
     height: auto;
     display: grid;
@@ -149,7 +150,7 @@ body {
   font-weight: 700;
   font-size: 2rem; }
 
-@media (min-width: 751px) {
+@media (min-width: 801px) {
   .projects {
     display: flex;
     justify-content: space-around;
@@ -200,7 +201,7 @@ body {
       .flip__back a .button:active {
         background-color: #a4a4a4; } }
 
-@media screen and (-ms-high-contrast: active) and (min-width: 751px), (-ms-high-contrast: none) and (min-width: 751px) {
+@media screen and (-ms-high-contrast: active) and (min-width: 801px), (-ms-high-contrast: none) and (min-width: 801px) {
   .projects {
     display: flex;
     justify-content: space-around;
@@ -256,7 +257,7 @@ body {
       .flip__back a .button:active {
         background-color: #a4a4a4; } }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   .projects {
     height: 150vh;
     display: flex;
@@ -289,7 +290,7 @@ body {
   font-weight: 700;
   font-size: 2rem; }
 
-@media (min-width: 751px) {
+@media (min-width: 801px) {
   #contact {
     height: auto;
     padding-bottom: 5vh; }
@@ -354,7 +355,7 @@ body {
         pointer-events: none;
         text-decoration: none; } }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   #contact {
     height: auto;
     padding-bottom: 5vh; }
