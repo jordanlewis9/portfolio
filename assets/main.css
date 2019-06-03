@@ -21,8 +21,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  margin-left: -5vw; }
+  width: 100vw; }
 
 .nav-list {
   list-style: none;
