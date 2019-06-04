@@ -16,14 +16,18 @@ const handleAboutHighlight = (e) => {
     window.scrollY >= about.offsetTop &&
     window.scrollY < about.offsetTop + about.offsetHeight
   ) {
-    navAbout.style.color = "#111";
-    navAbout.parentElement.style.background = "white";
+    // navAbout.style.color = "#111";
+    // navAbout.parentElement.style.background = "white";
+    navAbout.parentElement.classList.add("li-active");
+    navAbout.classList.add("a-active");
   } else if (
     window.scrollY >= about.offsetTop + about.offsetHeight ||
     window.scrollY <= about.offsetTop
   ) {
-    navAbout.style.color = "white";
-    navAbout.parentElement.style.background = "";
+    // navAbout.style.color = "white";
+    // navAbout.parentElement.style.background = "";
+    navAbout.parentElement.classList.remove("li-active");
+    navAbout.classList.remove("a-active");
   }
 };
 
@@ -32,14 +36,14 @@ const handleContactHighlight = (e) => {
     window.scrollY >= contact.offsetTop &&
     window.scrollY < contact.offsetTop + contact.offsetHeight
   ) {
-    navContact.style.color = "#111";
-    navContact.parentElement.style.background = "white";
+    navContact.parentElement.classList.add("li-active");
+    navContact.classList.add("a-active");
   } else if (
     window.scrollY >= contact.offsetTop + contact.offsetHeight ||
     window.scrollY <= contact.offsetTop
   ) {
-    navContact.style.color = "white";
-    navContact.parentElement.style.background = "";
+    navContact.parentElement.classList.remove("li-active");
+    navContact.classList.remove("a-active");
   }
 };
 
@@ -52,19 +56,19 @@ const handleProjectsHighlight = (e) => {
     window.scrollY >= projects.offsetTop + projects.offsetHeight ||
     document.body.clientHeight - window.innerHeight <= window.scrollY
   ) {
-    navProjects.style.color = "white";
-    navProjects.parentElement.style.background = "";
-    navContact.style.color = "#111";
-    navContact.parentElement.style.background = "white";
+    navProjects.parentElement.classList.remove("li-active");
+    navProjects.classList.remove("a-active");
+    navContact.parentElement.classList.add("li-active");
+    navContact.classList.add("a-active");
   } else if (
     window.scrollY >= projects.offsetTop &&
     window.scrollY < projects.offsetTop + projects.offsetHeight
   ) {
-    navProjects.style.color = "#111";
-    navProjects.parentElement.style.background = "white";
+    navProjects.parentElement.classList.add("li-active");
+    navProjects.classList.add("a-active");
   } else if (window.scrollY <= projects.offsetTop) {
-    navProjects.style.color = "white";
-    navProjects.parentElement.style.background = "";
+    navProjects.parentElement.classList.remove("li-active");
+    navProjects.classList.remove("a-active");
   }
 };
 

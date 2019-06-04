@@ -23,19 +23,25 @@ body {
   left: 0;
   width: 100vw; }
 
-.nav-list {
+nav {
   list-style: none;
   display: block; }
-  .nav-list li {
+  nav li {
     display: inline-block;
     padding: 10px; }
-    .nav-list li a {
+    nav li a {
       text-decoration: none;
       color: white;
       font-weight: 700;
       letter-spacing: 2px; }
-      .nav-list li a:hover {
+      nav li a:hover {
         color: #828282; }
+
+.li-active {
+  background: white; }
+
+.a-active {
+  color: #111; }
 
 #home {
   text-align: center;

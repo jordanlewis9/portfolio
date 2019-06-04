@@ -40,7 +40,7 @@ body {
   width: 100vw;
 }
 
-.nav-list {
+nav {
   list-style: none;
   display: block;
 
@@ -59,6 +59,14 @@ body {
       }
     }
   }
+}
+
+.li-active {
+  background: white;
+}
+
+.a-active {
+  color: #111;
 }
 
 #home {
