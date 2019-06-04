@@ -14,8 +14,9 @@
   "author": "Jordan Lewis",
   "license": "ISC",
   "dependencies": {
+    "harp": "*",
     "node-sass": "^4.11.0",
-    "harp": "*"
+    "tar": "^4.4.9"
   },
   "devDependencies": {}
 }
