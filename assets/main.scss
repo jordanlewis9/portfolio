@@ -11,6 +11,9 @@
   padding: 5%;
 }
 
+$primary-color: #d6f5d6;
+$secondary-color: #000000;
+
 * {
   margin: 0;
   padding: 0;
@@ -19,8 +22,8 @@
 }
 
 body {
-  background: white;
-  color: #111;
+  background: $primary-color;
+  color: $secondary-color;
   background-size: cover;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -32,7 +35,7 @@ body {
 }
 
 .top-nav {
-  background: #111;
+  background: $secondary-color;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -44,29 +47,35 @@ nav {
   list-style: none;
   display: block;
 
-  li {
-    display: inline-block;
-    padding: 10px;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-    a {
-      text-decoration: none;
-      color: white;
-      font-weight: 700;
-      letter-spacing: 2px;
+    li {
+      display: inline-block;
+      padding: 10px;
 
-      &:hover {
-        color: rgb(130, 130, 130);
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        font-weight: 700;
+        letter-spacing: 2px;
+
+        &:hover {
+          color: rgb(130, 130, 130);
+        }
       }
     }
   }
 }
 
 .li-active {
-  background: white;
+  background: $primary-color;
 }
 
 .a-active {
-  color: #111;
+  color: $secondary-color;
 }
 
 #home {
@@ -139,8 +148,8 @@ nav {
   width: 100%;
 
   .about__img {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
+    grid-row: 1;
+    grid-column: 1;
     padding-right: 10px;
 
     img {
@@ -151,19 +160,19 @@ nav {
   }
 
   .about__text {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
+    grid-row: 1;
+    grid-column: 2;
   }
 
   .exp__text {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
+    grid-row: 2;
+    grid-column: 1;
     padding: 5% 0;
   }
 
   .exp__img {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
+    grid-row: 2;
+    grid-column: 2;
 
     img {
       @include img-style;
@@ -184,31 +193,31 @@ nav {
     -ms-grid-column-align: center;
 
     .about__img {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
+      grid-row: 1;
+      grid-column: 1;
       img {
         @include five-pad;
       }
     }
 
     .about__text {
-      -ms-grid-row: 2;
-      -ms-grid-column: 1;
+      grid-row: 2;
+      grid-column: 1;
       @include five-pad;
       height: auto;
     }
 
     .exp__text {
       order: 4;
-      -ms-grid-row: 4;
-      -ms-grid-column: 1;
+      grid-row: 4;
+      grid-column: 1;
       @include five-pad;
       height: auto;
     }
 
     .exp__img {
-      -ms-grid-row: 3;
-      -ms-grid-column: 1;
+      grid-row: 3;
+      grid-column: 1;
 
       img {
         order: 3;
@@ -273,8 +282,8 @@ nav {
   }
 
   .flip__back {
-    background: #111;
-    color: white;
+    background: $secondary-color;
+    color: $primary-color;
     transform: rotateY(180deg);
 
     .caption {
@@ -357,8 +366,8 @@ nav {
     }
 
     .flip__back {
-      background: #111;
-      color: white;
+      background: $secondary-color;
+      color: $primary-color;
       transform: rotateY(180deg);
 
       .caption {
@@ -421,8 +430,8 @@ nav {
   }
 
   .caption {
-    background: #111;
-    color: white;
+    background: $secondary-color;
+    color: $primary-color;
     padding-top: 5px;
   }
 }
@@ -454,76 +463,76 @@ nav {
       .contact {
         width: 150px;
         height: 150px;
-        background-color: white;
+        background-color: $primary-color;
         border-radius: 50%;
         text-align: center;
         justify-self: center;
         -ms-grid-column-align: center;
 
         &:hover {
-          background-color: #111;
+          background-color: $secondary-color;
         }
 
         &:hover .icon {
-          color: white;
+          color: $primary-color;
         }
 
         &__github {
-          -ms-grid-row: 1;
-          -ms-grid-column: 1;
+          grid-row: 1;
+          grid-column: 1;
         }
 
         &__email {
-          -ms-grid-row: 2;
-          -ms-grid-column: 1;
+          grid-row: 2;
+          grid-column: 1;
         }
 
         &__linkedin {
-          -ms-grid-row: 3;
-          -ms-grid-column: 1;
+          grid-row: 3;
+          grid-column: 1;
         }
 
         .icon {
           font-size: 7rem;
           margin-top: 19px;
-          color: #111;
+          color: $secondary-color;
         }
 
         &:hover + .site {
-          background-color: #111;
+          background-color: $secondary-color;
 
           .link__p {
-            color: white;
+            color: $primary-color;
           }
         }
       }
 
       .site {
-        background-color: white;
+        background-color: $primary-color;
         font-size: 50px;
 
         &__github {
-          -ms-grid-row: 1;
-          -ms-grid-column: 2;
+          grid-row: 1;
+          grid-column: 2;
           -ms-grid-row-align: center;
         }
 
         &__email {
-          -ms-grid-row: 2;
-          -ms-grid-column: 2;
+          grid-row: 2;
+          grid-column: 2;
           -ms-grid-row-align: center;
         }
 
         &__linkedin {
-          -ms-grid-row: 3;
-          -ms-grid-column: 2;
+          grid-row: 3;
+          grid-column: 2;
           -ms-grid-row-align: center;
         }
       }
 
       .link__p {
         display: inline;
-        color: #111;
+        color: $secondary-color;
         pointer-events: none;
         text-decoration: none;
       }
@@ -548,12 +557,12 @@ nav {
       }
 
       .site {
-        background-color: #111;
+        background-color: $secondary-color;
         width: 100%;
         text-align: center;
 
         .link__p {
-          color: white;
+          color: $primary-color;
           text-decoration: none;
           font-size: 50px;
         }
