@@ -8,8 +8,7 @@ body {
   background: #d6f5d6;
   color: #000000;
   background-size: cover;
-  overflow-y: scroll;
-  overflow-x: hidden; }
+  overflow-y: scroll; }
 
 section {
   display: block; }
@@ -158,21 +157,22 @@ nav {
 
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr; }
+
+.thumbnail {
+  display: grid;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 1fr; }
 
 .pic__link {
-  display: block;
-  height: auto;
-  width: auto; }
+  display: inline-block;
+  height: 100%;
+  width: 100%; }
 
-.flip__pic {
-  height: auto;
-  width: auto; }
-
-.ttt {
-  height: auto;
-  width: auto; }
+.pic__quote {
+  height: 33%;
+  width: 100%; }
 
 .project__header {
   text-align: center;
