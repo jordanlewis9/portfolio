@@ -157,22 +157,29 @@ nav {
 
 .projects {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr; }
+  grid-template-columns: 100%;
+  grid-template-rows: auto 300px auto; }
 
 .thumbnail {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 1fr; }
 
-.pic__link {
-  display: inline-block;
+.pic__container {
   height: 100%;
   width: 100%; }
 
+.pic__board {
+  max-height: 100%;
+  max-width: 100%; }
+
+.pic__ttt {
+  max-height: 100%;
+  max-width: 100%; }
+
 .pic__quote {
   height: 33%;
-  width: 100%; }
+  max-width: 100%; }
 
 .project__header {
   text-align: center;
