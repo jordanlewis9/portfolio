@@ -158,16 +158,14 @@ nav {
 .projects {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: auto 300px auto; }
+  grid-template-rows: auto auto auto;
+  grid-gap: 1rem; }
 
 .thumbnail {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr; }
-
-.pic__container {
-  height: 100%;
-  width: 100%; }
+  grid-template-rows: auto;
+  grid-gap: 0 1rem; }
 
 .pic__board {
   max-height: 100%;
@@ -178,8 +176,20 @@ nav {
   max-width: 100%; }
 
 .pic__quote {
-  height: 33%;
   max-width: 100%; }
+
+.pic__container {
+  margin: 0 auto; }
+
+.caption {
+  align-self: center; }
+
+@media (max-width: 600px) {
+  .thumbnail {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center; } }
 
 .project__header {
   text-align: center;
