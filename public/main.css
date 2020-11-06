@@ -181,6 +181,16 @@ nav {
 .pic__container {
   margin: 0 auto; }
 
+@media (min-width: 601px) {
+  .caption__ttt {
+    grid-area: caption; }
+  .pic__ttt {
+    grid-area: picture; }
+  .thumbnail__2 {
+    display: grid;
+    grid-template-areas: "caption picture";
+    grid-gap: 0 1rem; } }
+
 .caption {
   align-self: center; }
 

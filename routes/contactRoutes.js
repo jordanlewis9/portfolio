@@ -2,4 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
-router.post("/");
+router.post("/", (req, res) => {
+  console.log("Hello");
+});
+
+module.exports = router;
