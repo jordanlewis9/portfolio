@@ -151,12 +151,18 @@
           </p>
         </div>
       </section>
-      <form method="POST">
-        <input type="text" name="name" placeholder="name" />
-        <input type="text" name="subject" placeholder="subject" />
-        <textarea name="message"></textarea>
+      <form method="POST" id="form">
+        <input type="email" name="email" placeholder="email" id="email" />
+        <input type="text" name="subject" placeholder="subject" id="subject" />
+        <textarea name="message" id="message"></textarea>
+        <input type="submit" name="submit" id="submit" />
       </form>
     </div>
   </body>
-  <script src="./index.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"
+    integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ=="
+    crossorigin="anonymous"
+  ></script>
+  <script src="./index.js" type="module"></script>
 </html>

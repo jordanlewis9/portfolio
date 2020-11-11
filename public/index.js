@@ -5,6 +5,11 @@ const navContact = document.querySelector("#nav-contact");
 const projects = document.querySelector("#projects");
 const about = document.querySelector("#about");
 const contact = document.querySelector("#contact");
+const contactForm = document.querySelector("#form");
+const contactEmail = document.querySelector("#email");
+const contactSubject = document.querySelector("#subject");
+const contactMessage = document.querySelector("#message");
+const contactSubmit = document.querySelector("#submit");
 
 // To account for navbar fixed position
 about.style.paddingTop = `${nav.offsetHeight}px`;
@@ -72,8 +77,17 @@ const handleProjectsHighlight = (e) => {
   }
 };
 
+const handleContactSubmit = async (e) => {
+  e.preventDefault();
+  console.log(contactEmail.value, contactSubject.value, contactMessage.value);
+  console.log("success");
+  const info = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  console.log(info);
+};
+
 window.addEventListener("scroll", handleAboutHighlight);
 window.addEventListener("scroll", handleContactHighlight);
 window.addEventListener("scroll", handleProjectsHighlight);
+contactForm.addEventListener("submit", handleContactSubmit);
 
 console.log(document.body.clientHeight - window.innerHeight <= window.scrollY);
