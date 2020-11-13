@@ -6,6 +6,7 @@ const projects = document.querySelector("#projects");
 const about = document.querySelector("#about");
 const contact = document.querySelector("#contact");
 const contactForm = document.querySelector("#form");
+const contactName = document.querySelector("#name");
 const contactEmail = document.querySelector("#email");
 const contactSubject = document.querySelector("#subject");
 const contactMessage = document.querySelector("#message");
@@ -77,11 +78,35 @@ const handleProjectsHighlight = (e) => {
   }
 };
 
+const handleEmailValidation = (email) => {
+  const validRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  return email.match(validRegex);
+};
+
+const handleScriptAttack = (input) => {
+  const scriptRegex = /<script/i;
+  return input.match(scriptRegex);
+};
+
 const handleContactSubmit = async (e) => {
   e.preventDefault();
+  if (!handleEmailValidation(contactEmail.value)) {
+    return alert("Please enter a valid email address");
+  }
+  if (handleScriptAttack(contactSubject.value)) {
+    return alert("Shame on you");
+  }
+  if (handleScriptAttack(contactMessage.value)) {
+    return alert("Really?");
+  }
   console.log(contactEmail.value, contactSubject.value, contactMessage.value);
   console.log("success");
-  const info = await axios.get("https://jsonplaceholder.typicode.com/posts");
+  const info = await axios.post("/contact", {
+    name: contactName.value,
+    subject: contactSubject.value,
+    message: contactMessage.value,
+    email: contactEmail.value
+  });
   console.log(info);
 };
 
