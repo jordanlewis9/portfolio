@@ -298,3 +298,9 @@ nav {
           color: #d6f5d6;
           text-decoration: none;
           font-size: 50px; } }
+
+.error__message,
+.thank-you {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 2rem; }

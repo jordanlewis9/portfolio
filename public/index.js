@@ -101,13 +101,17 @@ const handleContactSubmit = async (e) => {
   }
   console.log(contactEmail.value, contactSubject.value, contactMessage.value);
   console.log("success");
+  contactForm.removeEventListener("submit", handleContactSubmit);
   const info = await axios.post("/contact", {
     name: contactName.value,
     subject: contactSubject.value,
     message: contactMessage.value,
     email: contactEmail.value
   });
-  console.log(info);
+  if (info.status === 201) {
+    window.open('/thank-you')
+    window.location.reload();
+  }
 };
 
 window.addEventListener("scroll", handleAboutHighlight);

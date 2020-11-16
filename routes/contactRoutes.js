@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const { sgMail, msg } = require('./../utils/emailSetup')
 
 const router = express.Router();
@@ -13,10 +14,10 @@ router.post("/", async (req, res) => {
   const msgToSend = msg(req.body);
   try {
     await sgMail.send(msgToSend);
-    res.status(200).json({
+    res.status(201).json({
       status: 'success',
       message: 'Email successfully sent.'
-    });
+    })
   } catch (error) {
     console.error(error)
   }
