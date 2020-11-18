@@ -320,6 +320,68 @@ nav {
   font-size: 2rem;
 }
 
+.contact__form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto auto auto auto;
+  gap: 1rem;
+}
+
+.contact__label {
+  justify-self: end;
+  margin-right: 1rem;
+
+  &--name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  &--email {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  &--subject {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  &--message {
+    grid-column: 1;
+    grid-row: 4;
+    align-self: center;
+  }
+}
+
+.contact__input {
+  &--name {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  &--email {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  &--subject {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  &--message {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  &--submit {
+    grid-column: 1/4;
+    grid-row: 5;
+    width: 20%;
+    justify-self: center;
+  }
+}
+
 @media (min-width: 801px) {
   #contact {
     height: auto;
@@ -328,51 +390,46 @@ nav {
     .links {
       height: auto;
       display: grid;
-      display: -ms-grid;
-      -ms-grid-rows: 1fr 1fr 1fr;
-      -ms-grid-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       padding-left: 5px;
-      padding-top: 5vh;
 
       .contact {
-        width: 150px;
-        height: 150px;
+        width: auto;
+        height: auto;
         background-color: $primary-color;
-        border-radius: 50%;
         text-align: center;
         justify-self: center;
-        -ms-grid-column-align: center;
 
-        &:hover {
-          background-color: $secondary-color;
-        }
-
-        &:hover .icon {
+        .icon:hover {
           color: $primary-color;
+          background-color: $secondary-color;
+          border-radius: 50%;
         }
+
+        //left off trying to get hover effect working perfectly
 
         &__github {
           grid-row: 1;
           grid-column: 1;
         }
 
-        &__email {
-          grid-row: 2;
-          grid-column: 1;
+        &__linkedin {
+          grid-row: 1;
+          grid-column: 2;
         }
 
-        &__linkedin {
-          grid-row: 3;
-          grid-column: 1;
+        .link__icon {
+          height: auto;
+          width: auto;
         }
 
         .icon {
           font-size: 7rem;
           margin-top: 19px;
           color: $secondary-color;
+          // border-radius: 50%;
         }
 
         &:hover + .site {
@@ -385,32 +442,12 @@ nav {
       }
 
       .site {
-        background-color: $primary-color;
-        font-size: 50px;
-
-        &__github {
-          grid-row: 1;
-          grid-column: 2;
-          -ms-grid-row-align: center;
-        }
-
-        &__email {
-          grid-row: 2;
-          grid-column: 2;
-          -ms-grid-row-align: center;
-        }
-
-        &__linkedin {
-          grid-row: 3;
-          grid-column: 2;
-          -ms-grid-row-align: center;
-        }
+        font-size: 3.125rem;
       }
 
       .link__p {
         display: inline;
         color: $secondary-color;
-        pointer-events: none;
         text-decoration: none;
       }
     }

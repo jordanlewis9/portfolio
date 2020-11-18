@@ -108,6 +108,25 @@
         <header class="contact__header">
           Contact me sometime - I'd love to work with you
         </header>
+        <form method="POST" id="form" class="contact__form">
+          <label for="name" class="contact__label contact__label--name">
+            Name:
+          </label>
+          <input type="text" name="name" placeholder="Name" id="name" class="contact__input contact__input--name"/>
+          <label for="email" class="contact__label contact__label--email">
+            Email:
+          </label>
+          <input type="email" name="email" placeholder="Email" id="email"  class="contact__input contact__input--email" required />
+          <label for="subject" class="contact__label contact__label--subject">
+            Subject:
+          </label>
+          <input type="text" name="subject" placeholder="Subject" id="subject"  class="contact__input contact__input--subject" required />
+          <label for="message" class="contact__label contact__label--message">
+            Message:
+          </label>
+          <textarea name="message" id="message" placeholder="Let's chat"  class="contact__input contact__input--message" required ></textarea>
+          <input type="submit" name="submit" id="submit" class="contact__input--submit"/>
+        </form>
         <div class="links">
           <div class="contact contact__github">
             <a
@@ -116,23 +135,15 @@
               class="link__icon"
               ><i class="fab fa-github icon"></i
             ></a>
+            <p class="site site__github">
+              <a
+                href="https://github.com/jordanlewis9"
+                target="_blank"
+                class="link__p"
+                >GITHUB</a
+              >
+            </p>
           </div>
-          <p class="site site__github">
-            <a
-              href="https://github.com/jordanlewis9"
-              target="_blank"
-              class="link__p"
-              >GITHUB</a
-            >
-          </p>
-          <div class="contact contact__email">
-            <a href="mailto:mail@jordannlewis.com" class="link__icon"
-              ><i class="fas fa-envelope icon"></i
-            ></a>
-          </div>
-          <p class="site site__email">
-            <a href="mailto:mail@jordannlewis.com" class="link__p">EMAIL</a>
-          </p>
           <div class="contact contact__linkedin">
             <a
               href="https://www.linkedin.com/in/jordannlewis1/"
@@ -140,24 +151,17 @@
               class="link__icon"
               ><i class="fab fa-linkedin icon"></i
             ></a>
+            <p class="site site__linkedin">
+              <a
+                href="https://www.linkedin.com/in/jordannlewis1/"
+                target="_blank"
+                class="link__p"
+                >LINKEDIN</a
+              >
+            </p>
           </div>
-          <p class="site site__linkedin">
-            <a
-              href="https://www.linkedin.com/in/jordannlewis1/"
-              target="_blank"
-              class="link__p"
-              >LINKEDIN</a
-            >
-          </p>
         </div>
       </section>
-      <form method="POST" id="form">
-        <input type="text" name="name" placeholder="Name" id="name" />
-        <input type="email" name="email" placeholder="Email" id="email" required />
-        <input type="text" name="subject" placeholder="Subject" id="subject" required />
-        <textarea name="message" id="message" placeholder="Let's chat" required ></textarea>
-        <input type="submit" name="submit" id="submit" />
-      </form>
     </div>
   </body>
   <script
