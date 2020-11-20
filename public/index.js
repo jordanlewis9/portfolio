@@ -90,11 +90,16 @@ const handleScriptAttack = (input) => {
 
 const handleContactSubmit = async (e) => {
   e.preventDefault();
-  if (!handleEmailValidation(contactEmail.value)) {
-    return alert("Please enter a valid email address");
+  if (!contactEmail.value) {
+    const emailRequired = document.querySelector(".contact__input--email--container .required");
+    emailRequired.classList.add("required-show");
+    contactEmail.classList.add("required-input");
   }
-  if (handleScriptAttack(contactSubject.value)) {
-    return alert("Shame on you");
+  if (!contactSubject.value) {
+    const subjectRequired = document.querySelector(".contact__input--subject--container .required");
+    subjectRequired.classList.add("required-show");
+    contactSubject.classList.add("required-input");
+    return;
   }
   if (handleScriptAttack(contactMessage.value)) {
     return alert("Really?");
@@ -114,9 +119,23 @@ const handleContactSubmit = async (e) => {
   }
 };
 
+const handleContactSubmitPush = () => {
+  contactSubmit.classList.add("submit-pushed");
+}
+
+const handleContactSubmitDepush = () => {
+  contactSubmit.classList.remove("submit-pushed");
+}
+
+const handleOnInvalid = () => {
+
+}
+
 window.addEventListener("scroll", handleAboutHighlight);
 window.addEventListener("scroll", handleContactHighlight);
 window.addEventListener("scroll", handleProjectsHighlight);
 contactForm.addEventListener("submit", handleContactSubmit);
+contactSubmit.addEventListener("mousedown", handleContactSubmitPush);
+contactSubmit.addEventListener("mouseup", handleContactSubmitDepush);
 
 console.log(document.body.clientHeight - window.innerHeight <= window.scrollY);

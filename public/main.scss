@@ -326,6 +326,7 @@ nav {
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: auto auto auto auto;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .contact__label {
@@ -335,16 +336,19 @@ nav {
   &--name {
     grid-column: 1;
     grid-row: 1;
+    align-self: center;
   }
 
   &--email {
     grid-column: 1;
     grid-row: 2;
+    align-self: center;
   }
 
   &--subject {
     grid-column: 1;
     grid-row: 3;
+    align-self: center;
   }
 
   &--message {
@@ -358,28 +362,89 @@ nav {
   &--name {
     grid-column: 2;
     grid-row: 1;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $secondary-color;
+    background-color: $primary-color;
+    height: 2rem;
+    width: 100%;
   }
 
   &--email {
-    grid-column: 2;
-    grid-row: 2;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $secondary-color;
+    background-color: $primary-color;
+    height: 2rem;
+    width: 100%;
+    &--container {
+      grid-column: 2;
+      grid-row: 2;
+      height: auto;
+      width: 100%;
+    }
   }
 
   &--subject {
-    grid-column: 2;
-    grid-row: 3;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $secondary-color;
+    background-color: $primary-color;
+    height: 2rem;
+    width: 100%;
+    &--container {
+      grid-column: 2;
+      grid-row: 3;
+      height: auto;
+      width: 100%;
+    }
   }
 
   &--message {
     grid-column: 2;
     grid-row: 4;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $secondary-color;
+    background-color: $primary-color;
+    height: 6rem;
+    resize: none;
   }
+
   &--submit {
     grid-column: 1/4;
     grid-row: 5;
     width: 20%;
     justify-self: center;
+    height: 2rem;
+    background-color: #24e307;
+    color: $secondary-color;
+    border: none;
+    outline: none;
+    border-radius: 2%;
+    box-shadow: 0 3px 4px $secondary-color;
+    // &:hover {
+    //   box-shadow: 0 1px 2px $secondary-color;
+    // }
   }
+}
+
+.submit-pushed {
+  box-shadow: 0 1px 2px $secondary-color;
+}
+
+.required {
+  display: none;
+}
+
+.required-show {
+  display: block;
+  color: red;
+  font-size: 0.5rem;
+}
+
+.required-input {
+  border-bottom: 1px solid red;
 }
 
 @media (min-width: 801px) {
@@ -402,11 +467,29 @@ nav {
         text-align: center;
         justify-self: center;
 
-        .icon:hover {
-          color: $primary-color;
-          background-color: $secondary-color;
-          border-radius: 50%;
+        .icon__container__github {
+          height: auto;
+          width: auto;
+
+          &:hover {
+            // border-radius: 50%;
+
+            // color: $primary-color;
+
+            & .icon {
+              color: $primary-color;
+              background-color: $secondary-color;
+              // clip-path: circle(75% at 50% 50%);
+              border: none;
+              outline: none;
+            }
+          }
         }
+
+        // .icon:hover {
+        //   color: $primary-color;
+        //   background-color: $secondary-color;
+        // }
 
         //left off trying to get hover effect working perfectly
 
@@ -427,7 +510,6 @@ nav {
 
         .icon {
           font-size: 7rem;
-          margin-top: 19px;
           color: $secondary-color;
           // border-radius: 50%;
         }
