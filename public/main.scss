@@ -392,6 +392,7 @@ nav {
     background-color: $primary-color;
     height: 2rem;
     width: 100%;
+
     &--container {
       grid-column: 2;
       grid-row: 3;
@@ -401,14 +402,20 @@ nav {
   }
 
   &--message {
-    grid-column: 2;
-    grid-row: 4;
     border: none;
     outline: none;
     border-bottom: 1px solid $secondary-color;
     background-color: $primary-color;
     height: 6rem;
     resize: none;
+    width: 100%;
+
+    &--container {
+      grid-column: 2;
+      grid-row: 4;
+      height: auto;
+      width: 100%;
+    }
   }
 
   &--submit {
@@ -433,14 +440,14 @@ nav {
   box-shadow: 0 1px 2px $secondary-color;
 }
 
-.required {
-  display: none;
-}
+// .required {
+//   display: none;
+// }
 
 .required-show {
   display: block;
   color: red;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
 }
 
 .required-input {

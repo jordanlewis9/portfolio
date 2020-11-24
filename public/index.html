@@ -108,7 +108,7 @@
         <header class="contact__header">
           Contact me sometime - I'd love to work with you
         </header>
-        <form method="POST" id="form" class="contact__form">
+        <form method="POST" id="form" class="contact__form" autocomplete="off">
           <label for="name" class="contact__label contact__label--name">
             Name:
           </label>
@@ -117,20 +117,20 @@
             Email:
           </label>
           <div class="contact__input--email--container">
-            <input type="email" name="email" placeholder="Email" id="email"  class="contact__input contact__input--email" />
-            <p class="required">Required</p>
+            <input type="text" name="email" placeholder="Email" id="email"  class="contact__input contact__input--email" required/>
           </div>
           <label for="subject" class="contact__label contact__label--subject">
               Subject:
           </label>
           <div class="contact__input--subject--container">
-            <input type="text" name="subject" placeholder="Subject" id="subject"  class="contact__input contact__input--subject" />
-            <p class="required">Required</p>
+            <input type="text" name="subject" placeholder="Subject" id="subject"  class="contact__input contact__input--subject" required/>
           </div>
           <label for="message" class="contact__label contact__label--message">
             Message:
           </label>
-          <textarea name="message" id="message" placeholder="Let's chat..."  class="contact__input contact__input--message" required ></textarea>
+          <div class="contact__input--message--container">
+            <textarea name="message" id="message" placeholder="Let's chat..."  class="contact__input contact__input--message" required ></textarea>
+          </div>
           <input type="submit" name="submit" id="submit" class="contact__input--submit"/>
         </form>
         <div class="links">

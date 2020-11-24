@@ -78,44 +78,32 @@ const handleProjectsHighlight = (e) => {
   }
 };
 
-const handleEmailValidation = (email) => {
-  const validRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  return email.match(validRegex);
-};
-
-const handleScriptAttack = (input) => {
-  const scriptRegex = /<script/i;
-  return input.match(scriptRegex);
+const removeInvalidEmail = (e) => {
+  contactEmail.classList.remove("required-input");
+  contactEmail.removeEventListener("input", removeInvalidEmail)
 };
 
 const handleContactSubmit = async (e) => {
   e.preventDefault();
-  if (!contactEmail.value) {
-    const emailRequired = document.querySelector(".contact__input--email--container .required");
-    emailRequired.classList.add("required-show");
-    contactEmail.classList.add("required-input");
-  }
-  if (!contactSubject.value) {
-    const subjectRequired = document.querySelector(".contact__input--subject--container .required");
-    subjectRequired.classList.add("required-show");
-    contactSubject.classList.add("required-input");
-    return;
-  }
-  if (handleScriptAttack(contactMessage.value)) {
-    return alert("Really?");
-  }
   console.log(contactEmail.value, contactSubject.value, contactMessage.value);
   console.log("success");
   contactForm.removeEventListener("submit", handleContactSubmit);
-  const info = await axios.post("/contact", {
+  try {
+    const info = await axios.post("/contact", {
     name: contactName.value,
     subject: contactSubject.value,
     message: contactMessage.value,
     email: contactEmail.value
   });
-  if (info.status === 201) {
-    window.open('/thank-you')
-    window.location.reload();
+  console.log(info);
+    if (info.status === 201) {
+      window.open('/thank-you')
+      window.location.reload();
+    }
+  } catch(error) {
+    alert(error.response.data.message);
+    contactEmail.classList.add("required-input");
+    contactEmail.focus();
   }
 };
 
@@ -127,10 +115,20 @@ const handleContactSubmitDepush = () => {
   contactSubmit.classList.remove("submit-pushed");
 }
 
-const handleOnInvalid = () => {
-
+const handleRequiredInvalid = (e) => {
+  e.preventDefault();
+  e.target.insertAdjacentHTML('afterend', '<p class="required required-show">Required</p>');
+  e.target.classList.add("required-input");
+  e.target.addEventListener("input", removeRequiredElements);
 }
 
+const removeRequiredElements = (e) => {
+  e.target.classList.remove("required-input");
+  e.target.parentNode.removeChild(e.target.parentNode.querySelector(".required"));
+  e.target.removeEventListener("input", removeRequiredElements);
+}
+
+contactForm.addEventListener("invalid", handleRequiredInvalid, true);
 window.addEventListener("scroll", handleAboutHighlight);
 window.addEventListener("scroll", handleContactHighlight);
 window.addEventListener("scroll", handleProjectsHighlight);
