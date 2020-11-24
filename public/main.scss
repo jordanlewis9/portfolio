@@ -140,96 +140,13 @@ nav {
 }
 
 #about {
-  height: auto;
-  @include five-pad;
-  display: grid;
-  display: -ms-grid;
-  -ms-grid-rows: 1fr 1fr;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  font-weight: 600;
-  width: 100%;
-
-  .about__img {
-    grid-row: 1;
-    grid-column: 1;
-    padding-right: 10px;
-
-    img {
-      height: 80%;
-      width: 100%;
-      // padding: 0 20% 5% 15%;
-    }
-  }
-
-  .about__text {
-    grid-row: 1;
-    grid-column: 2;
-  }
-
-  .exp__text {
-    grid-row: 2;
-    grid-column: 1;
-    padding: 5% 0;
-  }
-
-  .exp__img {
-    grid-row: 2;
-    grid-column: 2;
-
-    img {
-      @include img-style;
-      padding: 5% 15% 5% 20%;
-    }
-  }
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
-@media (max-width: 800px) {
-  #about {
-    height: auto;
-    display: grid;
-    display: -ms-grid;
-    -ms-grid-rows: auto;
-    -ms-grid-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr;
-    -ms-grid-column-align: center;
-
-    .about__img {
-      grid-row: 1;
-      grid-column: 1;
-      img {
-        @include five-pad;
-      }
-    }
-
-    .about__text {
-      grid-row: 2;
-      grid-column: 1;
-      @include five-pad;
-      height: auto;
-    }
-
-    .exp__text {
-      order: 4;
-      grid-row: 4;
-      grid-column: 1;
-      @include five-pad;
-      height: auto;
-    }
-
-    .exp__img {
-      grid-row: 3;
-      grid-column: 1;
-
-      img {
-        order: 3;
-        @include five-pad;
-        height: 100%;
-      }
-    }
-  }
+.about__text {
+  font-weight: 600;
 }
 
 .projects {
@@ -477,20 +394,6 @@ nav {
         .icon__container__github {
           height: auto;
           width: auto;
-
-          &:hover {
-            // border-radius: 50%;
-
-            // color: $primary-color;
-
-            & .icon {
-              color: $primary-color;
-              background-color: $secondary-color;
-              // clip-path: circle(75% at 50% 50%);
-              border: none;
-              outline: none;
-            }
-          }
         }
 
         // .icon:hover {
@@ -519,14 +422,6 @@ nav {
           font-size: 7rem;
           color: $secondary-color;
           // border-radius: 50%;
-        }
-
-        &:hover + .site {
-          background-color: $secondary-color;
-
-          .link__p {
-            color: $primary-color;
-          }
         }
       }
 

@@ -100,7 +100,7 @@ const handleContactSubmit = async (e) => {
       window.open('/thank-you')
       window.location.reload();
     }
-  } catch(error) {
+  } catch (error) {
     alert(error.response.data.message);
     contactEmail.classList.add("required-input");
     contactEmail.focus();

@@ -5,6 +5,7 @@ const contactRouter = require("./routes/contactRoutes");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const cors = require('cors');
+const rateLimit = require("express-rate-limit")
 const app = express();
 dotenv.config({ path: "./.env" });
 
@@ -12,15 +13,21 @@ dotenv.config({ path: "./.env" });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-// // app.use(helmet());
-// app.use(helmet.contentSecurityPolicy({
-//   directives: {
-//     defaultSrc: ["'self'"],
-//     scriptSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"],
-//     styleSrc: ["'self'", "https://use.fontawesome.com/releases/v5.8.1/css/all.css"],
-//     imgSrc: ["'self'", "i.imgur.com"]
-//   }
-// }))
+app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"],
+    styleSrc: ["'self'", "https://use.fontawesome.com/releases/v5.8.1/css/all.css"],
+    imgSrc: ["'self'", "i.imgur.com"],
+    fontSrc: ["'self'", "*.fontawesome.com"]
+  }
+}));
+app.set('trust proxy', 1);
+const contactLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 30
+});
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -41,7 +48,7 @@ app.route("/thank-you").get((req, res) => {
   });
 });
 
-app.use("/contact", contactRouter);
+app.use("/contact", contactLimiter, contactRouter);
 
 app.route("*").get((req, res) => {
   console.log("error")
