@@ -347,19 +347,12 @@ nav {
     outline: none;
     border-radius: 2%;
     box-shadow: 0 3px 4px $secondary-color;
-    // &:hover {
-    //   box-shadow: 0 1px 2px $secondary-color;
-    // }
   }
 }
 
 .submit-pushed {
   box-shadow: 0 1px 2px $secondary-color;
 }
-
-// .required {
-//   display: none;
-// }
 
 .required-show {
   display: block;
@@ -371,7 +364,7 @@ nav {
   border-bottom: 1px solid red;
 }
 
-@media (min-width: 801px) {
+@media (min-width: 601px) {
   #contact {
     height: auto;
     padding-bottom: 5vh;
@@ -383,6 +376,7 @@ nav {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       padding-left: 5px;
+      margin-top: 2rem;
 
       .contact {
         width: auto;
@@ -390,18 +384,6 @@ nav {
         background-color: $primary-color;
         text-align: center;
         justify-self: center;
-
-        .icon__container__github {
-          height: auto;
-          width: auto;
-        }
-
-        // .icon:hover {
-        //   color: $primary-color;
-        //   background-color: $secondary-color;
-        // }
-
-        //left off trying to get hover effect working perfectly
 
         &__github {
           grid-row: 1;
@@ -421,7 +403,6 @@ nav {
         .icon {
           font-size: 7rem;
           color: $secondary-color;
-          // border-radius: 50%;
         }
       }
 
@@ -438,32 +419,50 @@ nav {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   #contact {
     height: auto;
     padding-bottom: 5vh;
 
     .links {
       height: auto;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      padding-top: 10vh;
+      padding-left: 5px;
+      margin-top: 2rem;
 
       .contact {
-        display: none;
+        width: auto;
+        height: auto;
+        background-color: $primary-color;
+        text-align: center;
+        justify-self: center;
+
+        &__github {
+          grid-row: 1;
+          grid-column: 1;
+        }
+
+        &__linkedin {
+          grid-row: 1;
+          grid-column: 2;
+        }
+
+        .link__icon {
+          height: auto;
+          width: auto;
+        }
+
+        .icon {
+          font-size: 7rem;
+          color: $secondary-color;
+        }
       }
 
       .site {
-        background-color: $secondary-color;
-        width: 100%;
-        text-align: center;
-
-        .link__p {
-          color: $primary-color;
-          text-decoration: none;
-          font-size: 50px;
-        }
+        display: none;
       }
     }
   }
