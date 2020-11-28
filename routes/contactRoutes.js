@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
   if (!handleEmailValidation(req.body.email)) {
     return res.status(400).json({
       status: 'fail',
+      type: "email",
       message: 'This is not a valid email address. Please enter a valid email address.'
     })
   };
@@ -31,6 +32,11 @@ router.post("/", async (req, res) => {
     })
   } catch (error) {
     console.error(error)
+    res.status(500).json({
+      status: 'fail',
+      type: "server",
+      message: "An unknown error occured. Please try again later."
+    })
   }
 });
 

@@ -25,8 +25,6 @@ const removeInvalidEmail = (e) => {
 
 const handleContactSubmit = async (e) => {
   e.preventDefault();
-  console.log(contactEmail.value, contactSubject.value, contactMessage.value);
-  console.log("success");
   contactForm.removeEventListener("submit", handleContactSubmit);
   try {
     const info = await axios.post("/contact", {
@@ -40,9 +38,14 @@ const handleContactSubmit = async (e) => {
       window.location.reload();
     }
   } catch (error) {
-    alert(error.response.data.message);
-    contactEmail.classList.add("required-input");
-    contactEmail.focus();
+    if (error.response.status === 400) {
+      alert(error.response.data.message);
+      contactEmail.classList.add("required-input");
+      contactEmail.focus();
+      contactForm.addEventListener("submit", handleContactSubmit);
+    } else {
+      window.location.replace("/error");
+    }
   }
 };
 

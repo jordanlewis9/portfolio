@@ -18,9 +18,9 @@ app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
     scriptSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"],
-    styleSrc: ["'self'", "https://use.fontawesome.com/releases/v5.8.1/css/all.css"],
+    styleSrc: ["'self'", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", "*.googleapis.com"],
     imgSrc: ["'self'", "i.imgur.com"],
-    fontSrc: ["'self'", "*.fontawesome.com"]
+    fontSrc: ["'self'", "*.fontawesome.com", "*.googleapis.com", "*.gstatic.com"]
   }
 }));
 app.set('trust proxy', 1);
@@ -31,15 +31,9 @@ const contactLimiter = rateLimit({
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "script-src 'self' https://cdnjs.cloudflare.com");
-  console.log("middleware")
-  return next();
-})
-
 app.route("/").get((req, res) => {
   console.log("going to the home page")
-  res.status(200).sendFile("index.html");
+  res.status(200).render("index.html");
 });
 
 app.route("/thank-you").get((req, res) => {
@@ -50,8 +44,14 @@ app.route("/thank-you").get((req, res) => {
 
 app.use("/contact", contactLimiter, contactRouter);
 
-app.route("*").get((req, res) => {
+app.route("/error").get((req, res) => {
   console.log("error")
+  res.sendFile("/error.html", {
+    root: path.join(__dirname, 'public')
+  });
+});
+
+app.route("*").get((req, res) => {
   res.sendFile("/error.html", {
     root: path.join(__dirname, 'public')
   });
