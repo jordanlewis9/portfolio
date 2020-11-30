@@ -6,6 +6,7 @@ const home = document.querySelector('#home');
 const projects = document.querySelector("#projects");
 const about = document.querySelector("#about");
 const contact = document.querySelector("#contact");
+const contactFormContainer = document.querySelector(".contact__form--container");
 const contactForm = document.querySelector("#form");
 const contactName = document.querySelector("#name");
 const contactEmail = document.querySelector("#email");
@@ -34,8 +35,10 @@ const handleContactSubmit = async (e) => {
     email: contactEmail.value
   });
     if (info.status === 201) {
-      window.open('/thank-you')
-      window.location.reload();
+      // window.open('/thank-you')
+      contactForm.classList.add("contact__form--container-fade-out");
+      setTimeout(() => contactFormContainer.innerHTML = "<p class='contact__form--thank-you'>Thank you for contacting me! I will respond to your message as soon as possible!</p>", 550);
+      setTimeout(() => window.location.reload(), 1500);
     }
   } catch (error) {
     if (error.response.status === 400) {
