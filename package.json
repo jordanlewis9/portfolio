@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "portfolio",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scss": "node-sass --watch public/main.scss -o public",
@@ -31,6 +31,6 @@
   },
   "devDependencies": {},
   "engines": {
-    "node": ">=14.0.0"
+    "node": "12.18.1"
   }
 }
