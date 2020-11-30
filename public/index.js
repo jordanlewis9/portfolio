@@ -35,10 +35,13 @@ const handleContactSubmit = async (e) => {
     email: contactEmail.value
   });
     if (info.status === 201) {
-      // window.open('/thank-you')
+      contactForm.removeEventListener("submit", handleContactSubmit);
       contactForm.classList.add("contact__form--container-fade-out");
-      setTimeout(() => contactFormContainer.innerHTML = "<p class='contact__form--thank-you'>Thank you for contacting me! I will respond to your message as soon as possible!</p>", 550);
-      setTimeout(() => window.location.reload(), 1500);
+      setTimeout(() => {
+        contactForm.style.visibility = "hidden";
+        contactFormContainer.insertAdjacentHTML("afterbegin", "<p class='contact__form--thank-you'>Thank you for contacting me! I will respond to your message as soon as possible!</p>");
+      }, 490);
+      setTimeout(() => window.location.reload(), 2000);
     }
   } catch (error) {
     if (error.response.status === 400) {

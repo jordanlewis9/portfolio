@@ -36,23 +36,16 @@ app.route("/").get((req, res) => {
   res.status(200).render("index.html");
 });
 
-app.route("/thank-you").get((req, res) => {
-  res.sendFile("/thankyou.html", {
-    root: path.join(__dirname, 'public')
-  });
-});
-
 app.use("/contact", contactLimiter, contactRouter);
 
 app.route("/error").get((req, res) => {
-  console.log("error")
   res.sendFile("/error.html", {
     root: path.join(__dirname, 'public')
   });
 });
 
 app.route("*").get((req, res) => {
-  res.sendFile("/error.html", {
+  res.sendFile("/doesnotexist.html", {
     root: path.join(__dirname, 'public')
   });
 });
