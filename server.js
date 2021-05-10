@@ -17,7 +17,7 @@ app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"],
+    scriptSrc: ["'self'", "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js", "https://www.googletagmanager.com/gtag/js?id=G-QG751NM2CN"],
     styleSrc: ["'self'", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", "*.googleapis.com"],
     imgSrc: ["'self'", "i.imgur.com"],
     fontSrc: ["'self'", "*.fontawesome.com", "*.googleapis.com", "*.gstatic.com"]
