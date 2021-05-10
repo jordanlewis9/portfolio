@@ -17,7 +17,7 @@ app.use(helmet());
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", "sha256-4ceKW4p347yM6DNp88zCxwCrtE/ORQ65LMuT492Osl4="],
+    scriptSrc: ["'self'", "'sha256-4ceKW4p347yM6DNp88zCxwCrtE/ORQ65LMuT492Osl4='"],
     styleSrc: ["'self'", "https://use.fontawesome.com/releases/v5.8.1/css/all.css", "*.googleapis.com"],
     imgSrc: ["'self'", "i.imgur.com"],
     fontSrc: ["'self'", "*.fontawesome.com", "*.googleapis.com", "*.gstatic.com"]
