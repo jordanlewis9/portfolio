@@ -26,7 +26,7 @@ body {
   color: $secondary-color;
   background-size: cover;
   overflow-y: scroll;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 section {
@@ -178,7 +178,7 @@ nav {
     max-width: 100%;
   }
 
-  &__quote {
+  &__poker {
     max-width: 100%;
   }
 
@@ -188,11 +188,11 @@ nav {
 }
 
 @media (min-width: 601px) {
-  .caption__ttt {
+  .caption__poker {
     grid-area: caption;
   }
 
-  .pic__ttt {
+  .pic__poker {
     grid-area: picture;
   }
 

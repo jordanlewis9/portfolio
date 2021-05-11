@@ -8,7 +8,8 @@ body {
   background: #d6f5d6;
   color: #000000;
   background-size: cover;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 section {
   display: block; }
@@ -119,16 +120,16 @@ nav {
   max-height: 100%;
   max-width: 100%; }
 
-.pic__quote {
+.pic__poker {
   max-width: 100%; }
 
 .pic__container {
   margin: 0 auto; }
 
 @media (min-width: 601px) {
-  .caption__ttt {
+  .caption__poker {
     grid-area: caption; }
-  .pic__ttt {
+  .pic__poker {
     grid-area: picture; }
   .thumbnail__2 {
     display: grid;
