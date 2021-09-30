@@ -44,7 +44,7 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 nav {
@@ -73,6 +73,26 @@ nav {
 @media (min-width: 800px) {
   nav a:hover {
     color: rgb(130, 130, 130);
+  }
+}
+
+@media (max-width: 600px) {
+  .top-nav {
+    height: 2rem;
+  }
+
+  nav ul {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    li {
+      padding: 5px;
+
+      a {
+        font-weight: 400;
+      }
+    }
   }
 }
 
@@ -205,7 +225,7 @@ nav {
 
 .caption {
   align-self: center;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media (max-width: 600px) {
@@ -213,6 +233,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    gap: 1rem;
     text-align: center;
   }
 }

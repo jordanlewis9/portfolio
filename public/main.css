@@ -24,7 +24,7 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; }
+  width: 100%; }
 
 nav {
   list-style: none;
@@ -45,6 +45,18 @@ nav {
 @media (min-width: 800px) {
   nav a:hover {
     color: #828282; } }
+
+@media (max-width: 600px) {
+  .top-nav {
+    height: 2rem; }
+  nav ul {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; }
+    nav ul li {
+      padding: 5px; }
+      nav ul li a {
+        font-weight: 400; } }
 
 #home {
   text-align: center;
@@ -138,13 +150,14 @@ nav {
 
 .caption {
   align-self: center;
-  font-weight: 300; }
+  font-weight: 400; }
 
 @media (max-width: 600px) {
   .thumbnail {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    gap: 1rem;
     text-align: center; } }
 
 .project__header {
